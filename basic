@@ -1,0 +1,337 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function swap()
+            {
+                var a=document.getElementById("n1").value;
+                var b=document.getElementById("n2").value;
+                a=a+b;
+                b=a-b;
+                a=a-b;
+
+                alert("a="+a+"b="+b);
+            }
+            function sumofdigits()
+            {
+                var s1=document.getElementById("s1").value;
+                var sum=0;
+                while(s1>0)
+                {
+                   var res=s1%10;
+                   sum+=res;
+                   s1=Math.floor(s1/10); 
+                }
+                alert(sum);
+            }  
+            function revNum()
+            {
+                var num1=document.getElementById("num1").value;
+                var rev=0;
+                while(num1!=0)
+                {
+                    var res=num1%10;
+                    rev=(rev*10)+res;
+                    num1=Math.floor(num1/10);
+                }
+                console.log(rev);
+                alert(rev);
+            } 
+            function revStr()
+            {
+                var str1=document.getElementById("str1").value;
+                var res="";
+                for(var i=str1.length-1;i>=0;i--)
+                {
+                    res=res+str1[i];
+                }
+                console.log(res);
+                alert(res);
+            } 
+            function palNum()
+            {
+                var num1=document.getElementById("num3").value;
+                var num2=num1;
+                var rev=0;
+                while(num1!=0)
+                {
+                    var res=num1%10;
+                    rev=(rev*10)+res;
+                    num1=Math.floor(num1/10);
+                }
+                if(num2==rev)
+                {
+                    alert("palindrome");
+                }
+                else{
+                    alert("not a palindrome");
+                }                
+            } 
+            function palStr()
+            {
+                var str1=document.getElementById("str2").value;
+                var str2=str1;
+                var res="";
+                for(var i=str1.length-1;i>=0;i--)
+                {
+                    res=res+str1[i];
+                }
+                if(str2==res)
+                {
+                    alert("palindrome"); 
+                }
+                else{
+                    alert("not a palindrome");
+                }    
+            } 
+            function leap()
+            {
+                var year=document.getElementById("year").value;
+                if(((year%4==0)&&(year%100!=0))||(year%400==0))
+                {
+                    alert(year+" is a leap year");  
+                }
+                else{
+                    alert(year+" is not a leap year"); 
+                }
+            }
+            function maxMin()
+            {
+                var num1=document.getElementById("num4").value;
+                var arr=Array.from(String(num1),Number);
+                var min=arr[0];
+                var max=arr[0];
+                for(var i=0;i<arr.length;i++)
+                {
+                    if(arr[i]<=min)
+                    {
+                        min=arr[i];
+                    }
+                    else
+                    {
+                        continue;
+                    }                    
+                }
+                for(var j=0;j<arr.length;j++)
+                {
+                    if(arr[j]>=max)
+                    {
+                        max=arr[j];
+                    }
+                    else
+                    {
+                        continue;
+                    }                    
+                }
+                alert("min = "+min+" max = "+max);
+                
+            }
+            function revarray()
+            {
+                var num1=document.getElementById("num5").value;
+                var arr=Array.from(String(num1),Number); 
+                var res=new Array();
+                for(var i=arr.length-1;i>=0;i--)
+                {
+                    res.push(arr[i]);
+                }
+                alert(res);
+            }
+            function sumDigits()
+            {
+                var num1=document.getElementById("num6").value;
+                var arr=Array.from(String(num1),Number);
+                var sum=0;
+                for(var i=0;i<arr.length;i++)
+                {
+                    sum+=arr[i];
+                } 
+                alert(sum);
+            }
+            function prime()
+            {
+                var num1=document.getElementById("prime").value;
+                var m=num1/2;
+                var flag=0;
+                if(num1==0||num1==1)
+                {
+                    alert("not a prime number");
+                }
+                else{
+                    for(var i=2;i<=m;i++)
+                    {
+                        if(num1%i==0)
+                        {
+                            alert("not a prime number");
+                            flag=1;
+                        }
+                    }
+                    if(flag==0)
+                    {
+                        alert("prime number");
+                    }
+                }
+            }
+            function Anagram()
+            {
+                var str1=document.getElementById("ana").value;
+                var ar1=Array.from(String(str1));
+                var str2=document.getElementById("ana1").value;
+                var ar2=Array.from(String(str2));
+                ar1.sort();
+                console.log(ar1);
+                ar2.sort();
+                console.log(ar2);
+                var flag=0;
+                for(var i=0;i<str1.length;i++)
+                {
+                    if(ar1[i]==ar2[i])
+                {
+                    flag++;
+                }                
+                } 
+                if(flag==str1.length)
+                {
+                    alert("anagram");
+                }              
+                else{
+                    alert("not an anagram");
+                }
+
+            }
+            function Amstrong()
+            {
+                var num1=document.getElementById("am").value;
+                var temp=num1;
+                console.log("temp="+temp);
+                var count=0;
+                var res=0;
+                while(temp>0)
+                {
+                    temp=Math.floor(temp/10);
+                    count+=1;
+                    console.log("count="+count);
+                }                
+                temp=num1;
+                while(temp>0)
+                {
+                    var rem=temp%10;
+                    res+=(Math.pow(rem,count));
+                    temp=Math.floor(temp/10);
+                }
+                console.log(res);
+                if(res==num1)
+                {
+                    alert("amstrong");
+                }
+                else
+                {
+                    alert("not an amstrong");
+                }
+            }
+            function Factorial()
+            {
+                var fact=document.getElementById("fact").value;
+                var res=1;
+                for(var i=1;i<=fact;i++)
+                {
+                    res=res*i;
+                }
+                alert(res);
+            }
+            function Fibonacci()
+            {
+                var fib=document.getElementById("fib").value; 
+                var n1=0;
+                var n2=1;
+                alert(n1);
+                alert(n2);
+                for(var i=2;i<fib;i++)
+                {
+                    var n3=n1+n2;
+                   alert(n3);
+                    n1=n2;
+                    n2=n3;
+                }
+                                
+            }
+              
+
+        </script>
+    </head>
+</html>
+<body>
+    <h1>Swap 2 numbers</h1>
+    <input type="text"  id="n1">
+    <br><br>
+    <input type="text"  id="n2">
+    <br><br>
+    <button onclick="swap()">submit</button>
+    <h1>sum of digits in a number</h1>
+    <input type="text"  id="s1">
+    <br><br>
+    <button onclick="sumofdigits()">submit</button>
+    <h1>reverse of anumber</h1>
+    <input type="text"  id="num1">
+    <br><br>
+    <button onclick="revNum()">submit</button>
+    <h1>reverse of string</h1>
+    <input type="text"  id="str1">
+    <br><br>
+    <button onclick="revStr()">submit</button>
+    <br><br>
+    <h1>palindrome of number</h1>
+    <input type="text"  id="num3">
+    <br><br>
+    <button onclick="palNum()">submit</button>
+    <h1>palindrome of string</h1>
+    <input type="text"  id="str2">
+    <br><br>
+    <button onclick="palStr()">submit</button>
+    <br><br>
+    <h1>leap year</h1>
+    <input type="text"  id="year">
+    <br><br>
+    <button onclick="leap()">submit</button>
+    <br><br>
+    <h1>max and min element in an array</h1>
+    <input type="text"  id="num4">
+    <br><br>
+    <button onclick="maxMin()">submit</button>
+    <br><br>
+    <h1>reverse of an array</h1>
+    <input type="text"  id="num5">
+    <br><br>
+    <button onclick="revarray()">submit</button>
+    <br><br>
+    <h1>sum of all digits of an array</h1>
+    <input type="text"  id="num6">
+    <br><br>
+    <button onclick="sumDigits()">submit</button>
+    <br><br>
+    <h1>prime number</h1>
+    <input type="text"  id="prime">
+    <br><br>
+    <button onclick="prime()">submit</button>
+    <br><br>
+    <h1>Anagram</h1>
+    <input type="text"  id="ana">
+    <br><br>
+    <input type="text"  id="ana1">
+    <br><br>
+    <button onclick="Anagram()">submit</button>
+    <br><br>
+    <h1>Amstrong</h1>
+    <input type="text"  id="am">
+    <br><br>
+    <button onclick="Amstrong()">submit</button>
+    <br><br>
+    <h1>Factorial</h1>
+    <input type="text"  id="fact">
+    <br><br>
+    <button onclick="Factorial()">submit</button>
+    <br><br>
+    <h1>Fibonacci</h1>
+    <input type="text"  id="fib">
+    <br><br>
+    <button onclick="Fibonacci()">submit</button>
+</body>
